@@ -104,4 +104,4 @@ ENV/
 .idea/
 
 # extra libs
-./FrontEnd/libraries/*
+./FrontEnd/libraries/
