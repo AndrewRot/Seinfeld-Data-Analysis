@@ -1,44 +1,16 @@
 Seinfeld Data Analysis
-
-Andrew Rottier
-Cory Tapply
-Diana Doherty
-
-
-Heading
 =======
 
-## Sub-heading
+## Contributors
+Andrew Rottier, acrottier@wpi.edu
+Cory Tapply, TODO
+Diana Doherty, TODO
  
-Paragraphs are separated
-by a blank line.
+ 
+To run this project, following the following steps:
+  1. Download the dependency libraries:
+       https://github.com/c3js/c3/releases/tag/v0.5.2
+  2. Move the downloaded C3 librar to the `libraries/` directory within the project.
+  3. Run locally [for now]
 
-Two spaces at the end of a line  
-produces a line break.
 
-Text attributes _italic_, 
-**bold**, `monospace`.
-
-Horizontal rule:
-
----
-
-Bullet list:
-
-  * apples
-  * oranges
-  * pears
-
-Numbered list:
-
-  1. wash
-  2. rinse
-  3. repeat
-
-A [link](http://example.com).
-
-![Image](Image_icon.png)
-
-> Markdown uses email-style > characters for blockquoting.
-
-Inline <abbr title="Hypertext Markup Language">HTML</abbr> is supported.
