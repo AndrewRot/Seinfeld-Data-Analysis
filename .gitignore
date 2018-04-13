@@ -103,10 +103,20 @@ ENV/
 # idea
 .idea/
 
-# extra libs
-./FrontEnd/libraries/
-FrontEnd/libraries/
-FrontEnd/libraries
-*/libraries/
-*/libraries
-*/libraries/*
+### Node ###
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+jspm_packages
+
+# Optional npm cache directory
+.npm
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+.DS_Store

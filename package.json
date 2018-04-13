@@ -1,0 +1,14 @@
+{
+  "name": "Seinfeld-Data-Analysis",
+  "description": "Project for ds3001 at WPI",
+  "version": "0.1.0",
+  "private": false,
+  "devDependencies": {},
+  "dependencies": {
+    "d3": "^5.0.0",
+    "express": "^4.15.4"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}
