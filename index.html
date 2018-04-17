@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/c3.min.css">
 
     <!-- Load d3.js and c3.js -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="js/c3.min.js"></script>
 
   </head>
@@ -130,20 +130,32 @@
           <div id="chart"></div>
           <script>
 
+            var chart;
+            seasons = ['season']
+            episodes = ['Episodes']
 
-            d3.csv("/Data/season_data.csv", function(data) {
-              console.log(data);
+            d3.csv("/Data/season_data.csv", function(error, data) {
+                console.log(data)
+
+                data.forEach(function(d) {
+                    episodes.push(parseInt(d["Episodes"]))
+                });
+
+//                seasons.push(parseInt(data["Season"]));
+//                episodes.push(parseInt(data["Episodes"]));
+//              console.log(seasons);
+//              console.log(episodes);
+
+                chart = c3.generate({
+                    bindto: '#chart',
+                    data: {
+                        columns: [
+                            episodes
+                        ]
+                    }
+                });
             });
 
-              var chart = c3.generate({
-                  bindto: '#chart',
-                  data: {
-                      columns: [
-                          ['data1', 30, 200, 100, 400, 150, 250],
-                          ['data2', 50, 20, 10, 40, 15, 25]
-                      ]
-                  }
-              });
 
           </script>
 
