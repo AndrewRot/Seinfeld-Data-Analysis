@@ -127,41 +127,108 @@
           <hr class="lines wow zoomIn" data-wow-delay="0.3s">
           <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
         </div>
+
         <div class="row">
+          <div class="col-md-2">
+            <!-- Top chart selection menu -->
+            <div class="controls text-left">
+              <a id="Episodes" onclick="loadRating('Episodes');" class="filter active btn btn-common" data-filter="all">
+                Episodes
+              </a>
+              <a id="Rank [Nielsen's]" onclick="loadRating('Rank [Nielsen]');" class="filter btn btn-common" data-filter=".design">
+                Rank </br> [Nielsen's]
+              </a>
+              <a id="Rating [Nielsen's]" onclick="loadRating('Rating  [Nielsen]');" class="filter btn btn-common" data-filter=".development">
+                Rating </br> [Nielsen's]
+              </a>
+              <a id="Rating [Rotten Tomato]" onclick="loadRating('Rating RT');" class="filter btn btn-common" data-filter=".print">
+                Rating </br> [Rotten Tomato]
+              </a>
+            </div>
+            <!-- Portfolio Controller/Buttons Ends-->
+          </div>
 
-          <div id="chart"></div>
-          <script>
-
-            var chart;
-            seasons = ['season']
-            episodes = ['Episodes']
-
-            d3.csv("/Data/season_data.csv", function(error, data) {
-                console.log(data)
-
-                data.forEach(function(d) {
-                    episodes.push(parseInt(d["Episodes"]))
-                });
-
-//                seasons.push(parseInt(data["Season"]));
-//                episodes.push(parseInt(data["Episodes"]));
-//              console.log(seasons);
-//              console.log(episodes);
-
-                chart = c3.generate({
-                    bindto: '#chart',
-                    data: {
-                        columns: [
-                            episodes
-                        ]
-                    }
-                });
-            });
-
-
-          </script>
-
+          <div class="col-md-10">
+            <div id="chart"></div>
+          </div>
         </div>
+
+        <script>
+
+          var chart = c3.generate({
+            bindto: '#chart',
+            data: {
+              columns: [ ]
+            },
+              axis: {
+                  x: {
+                      tick: {
+                          values: ['1','2', '3', '4', '5', '6', '7', '8', '9']
+                      },
+                      label: {
+                          position: 'outer-center',
+                          text: 'Season Number',
+                      } ,
+                      type: 'category',
+                  }
+              }
+          });
+
+          ratingRT = ['Rating RT'];
+          episodes = ['Episodes'];
+          rank = ['Rank [Nielsen]'];
+          rating = ['Rating  [Nielsen]'];
+
+          //Season,Episodes,First aired,Last aired,Rank [Nielsen],Rating  [Nielsen],Rating RT
+
+          d3.csv("/Data/season_data.csv", function(error, data) {
+              console.log(data)
+
+              data.forEach(function(d) {
+                  ratingRT.push(Number(d["Rating RT"]))
+                  episodes.push(parseInt(d["Episodes"]))
+                  rank.push(parseInt(d["Rank [Nielsen]"]))
+                  rating.push(Number(d["Rating  [Nielsen]"]))
+              });
+              console.log(ratingRT)
+
+              chart = c3.generate({
+                  bindto: '#chart',
+                  data: {
+                      columns: [
+                          ratingRT, episodes, rank, rating
+                      ]
+                  },
+                  axis: {
+                      x: {
+                          tick: {
+                              values: ['1','2', '3', '4', '5', '6', '7', '8', '9']
+                          },
+                          label: {
+                              position: 'outer-center',
+                              text: 'Season Number',
+                          } ,
+                          type: 'category',
+                      }
+                  }
+              });
+              chart.hide(['Rating RT', 'Rank [Nielsen]', 'Rating  [Nielsen]']);
+          });
+
+          //document.getElementById("all").onclick = loadRating;
+          function loadRating(dataToShow){
+              console.log(dataToShow);
+              chart.hide(['Episodes', 'Rating RT', 'Rank [Nielsen]', 'Rating  [Nielsen]']);
+              chart.show([dataToShow]);
+
+          }
+
+        </script>
+
+      </div>
+
+
+
       </div>
     </section>
     <!-- Services Section End -->
