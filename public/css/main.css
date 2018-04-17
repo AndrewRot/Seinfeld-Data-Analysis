@@ -404,7 +404,7 @@ button:focus {
    3. Hero Area
    ========================================================================== */
 #hero-area {
-  background: url(../img/seinfeld-banner.jpg)  no-repeat;
+  background: url(../img/seinfeld-banner.png)  no-repeat;
   background-size: cover;
   color: #fff;
   overflow: hidden;

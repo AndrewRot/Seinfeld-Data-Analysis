@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/owl.theme.css">
     <link rel="stylesheet" href="css/nivo-lightbox.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.css">    
@@ -24,16 +23,15 @@
     <link rel="stylesheet" href="css/c3.min.css">
 
     <!-- Load d3.js and c3.js -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="js/c3.min.js"></script>
-
 
   </head>
   <body>
 
 
     <!-- Header Section Start -->
-    <header id="hero-area" data-stellar-background-ratio="0.5">    
+    <header id="hero-area" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">    
       <!-- Navbar Start -->
       <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
         <div class="container">
@@ -127,29 +125,108 @@
           <hr class="lines wow zoomIn" data-wow-delay="0.3s">
           <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
         </div>
+
         <div class="row">
+          <div class="col-md-2">
+            <!-- Top chart selection menu -->
+            <div class="controls text-left">
+              <a id="Episodes" onclick="loadRating('Episodes');" class="filter active btn btn-common" data-filter="all">
+                Episodes
+              </a>
+              <a id="Rank [Nielsen's]" onclick="loadRating('Rank [Nielsen]');" class="filter btn btn-common" data-filter=".design">
+                Rank </br> [Nielsen's]
+              </a>
+              <a id="Rating [Nielsen's]" onclick="loadRating('Rating  [Nielsen]');" class="filter btn btn-common" data-filter=".development">
+                Rating </br> [Nielsen's]
+              </a>
+              <a id="Rating [Rotten Tomato]" onclick="loadRating('Rating RT');" class="filter btn btn-common" data-filter=".print">
+                Rating </br> [Rotten Tomato]
+              </a>
+            </div>
+            <!-- Portfolio Controller/Buttons Ends-->
+          </div>
 
-          <div id="chart"></div>
-          <script>
+          <div class="col-md-10">
+            <div id="chart"></div>
+          </div>
+        </div>
 
+        <script>
 
-            d3.csv("/Data/season_data.csv", function(data) {
-              console.log(data);
-            });
+          var chart = c3.generate({
+            bindto: '#chart',
+            data: {
+              columns: [ ]
+            },
+              axis: {
+                  x: {
+                      tick: {
+                          values: ['1','2', '3', '4', '5', '6', '7', '8', '9']
+                      },
+                      label: {
+                          position: 'outer-center',
+                          text: 'Season Number',
+                      } ,
+                      type: 'category',
+                  }
+              }
+          });
 
-              var chart = c3.generate({
+          ratingRT = ['Rating RT'];
+          episodes = ['Episodes'];
+          rank = ['Rank [Nielsen]'];
+          rating = ['Rating  [Nielsen]'];
+
+          //Season,Episodes,First aired,Last aired,Rank [Nielsen],Rating  [Nielsen],Rating RT
+
+          d3.csv("/Data/season_data.csv", function(error, data) {
+              console.log(data)
+
+              data.forEach(function(d) {
+                  ratingRT.push(Number(d["Rating RT"]))
+                  episodes.push(parseInt(d["Episodes"]))
+                  rank.push(parseInt(d["Rank [Nielsen]"]))
+                  rating.push(Number(d["Rating  [Nielsen]"]))
+              });
+              console.log(ratingRT)
+
+              chart = c3.generate({
                   bindto: '#chart',
                   data: {
                       columns: [
-                          ['data1', 30, 200, 100, 400, 150, 250],
-                          ['data2', 50, 20, 10, 40, 15, 25]
+                          ratingRT, episodes, rank, rating
                       ]
+                  },
+                  axis: {
+                      x: {
+                          tick: {
+                              values: ['1','2', '3', '4', '5', '6', '7', '8', '9']
+                          },
+                          label: {
+                              position: 'outer-center',
+                              text: 'Season Number',
+                          } ,
+                          type: 'category',
+                      }
                   }
               });
+              chart.hide(['Rating RT', 'Rank [Nielsen]', 'Rating  [Nielsen]']);
+          });
 
-          </script>
+          //document.getElementById("all").onclick = loadRating;
+          function loadRating(dataToShow){
+              console.log(dataToShow);
+              chart.hide(['Episodes', 'Rating RT', 'Rank [Nielsen]', 'Rating  [Nielsen]']);
+              chart.show([dataToShow]);
 
-        </div>
+          }
+
+        </script>
+
+      </div>
+
+
+
       </div>
     </section>
     <!-- Services Section End -->
@@ -533,49 +610,49 @@
     <!--</section>-->
     <!--&lt;!&ndash; Team section End &ndash;&gt;-->
 
-    <!--&lt;!&ndash; testimonial Section Start &ndash;&gt;-->
-    <!--<div id="testimonial" class="section" data-stellar-background-ratio="0.1">-->
-      <!--<div class="container">-->
-        <!--<div class="row justify-content-md-center">-->
-          <!--<div class="col-md-12">-->
-            <!--<div class="touch-slider owl-carousel owl-theme">-->
-              <!--<div class="testimonial-item">-->
-                <!--<img src="img/testimonial/customer1.jpg" alt="Client Testimonoal" />-->
-                <!--<div class="testimonial-text">-->
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. send do <br> adipisicing ciusmod tempor incididunt ut labore et</p>-->
-                  <!--<h3>Jone Deam</h3>-->
-                  <!--<span>Fondor of Jalmori</span>-->
-                <!--</div>-->
-              <!--</div>-->
-              <!--<div class="testimonial-item">-->
-                <!--<img src="img/testimonial/customer2.jpg" alt="Client Testimonoal" />-->
-                <!--<div class="testimonial-text">-->
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. send do <br> adipisicing ciusmod tempor incididunt ut labore et</p>-->
-                  <!--<h3>Oidila Matik</h3>-->
-                  <!--<span>President Lexo Inc</span>-->
-                <!--</div>-->
-              <!--</div>-->
-              <!--<div class="testimonial-item">-->
-                <!--<img src="img/testimonial/customer3.jpg" alt="Client Testimonoal" />-->
-                <!--<div class="testimonial-text">-->
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. send do <br> adipisicing ciusmod tempor incididunt ut labore et</p>-->
-                  <!--<h3>Alex Dattilo</h3>-->
-                  <!--<span>CEO Optima Inc</span>-->
-                <!--</div>-->
-              <!--</div>-->
-              <!--<div class="testimonial-item">-->
-                <!--<img src="img/testimonial/customer4.jpg" alt="Client Testimonoal" />-->
-                <!--<div class="testimonial-text">-->
-                  <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. send do <br> adipisicing ciusmod tempor incididunt ut labore et</p>-->
-                  <!--<h3>Paul Kowalsy</h3>-->
-                  <!--<span>CEO & Founder</span>-->
-                <!--</div>-->
-              <!--</div>-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>        -->
-      <!--</div>-->
-    <!--</div>-->
+    <!-- &lt;!&ndash; testimonial Section Start &ndash;&gt; -->
+    <div id="testimonial" class="section" data-stellar-background-ratio="0.1">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-12">
+            <div class="touch-slider owl-carousel owl-theme">
+              <div class="testimonial-item">
+                <img src="img/testimonial/customer1.jpg" alt="Client Testimonoal" />
+                <div class="testimonial-text">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. send do <br> adipisicing ciusmod tempor incididunt ut labore et</p>
+                  <h3>Jone Deam</h3>
+                  <span>Fondor of Jalmori</span>
+                </div>
+              </div>
+              <div class="testimonial-item">
+                <img src="img/testimonial/customer2.jpg" alt="Client Testimonoal" />
+                <div class="testimonial-text">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. send do <br> adipisicing ciusmod tempor incididunt ut labore et</p>
+                  <h3>Oidila Matik</h3>
+                  <span>President Lexo Inc</span>
+                </div>
+              </div>
+              <div class="testimonial-item">
+                <img src="img/testimonial/customer3.jpg" alt="Client Testimonoal" />
+                <div class="testimonial-text">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. send do <br> adipisicing ciusmod tempor incididunt ut labore et</p>
+                  <h3>Alex Dattilo</h3>
+                  <span>CEO Optima Inc</span>
+                </div>
+              </div>
+              <div class="testimonial-item">
+                <img src="img/testimonial/customer4.jpg" alt="Client Testimonoal" />
+                <div class="testimonial-text">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. send do <br> adipisicing ciusmod tempor incididunt ut labore et</p>
+                  <h3>Paul Kowalsy</h3>
+                  <span>CEO & Founder</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>       
+      </div>
+    </div>
     <!--&lt;!&ndash; testimonial Section Start &ndash;&gt;-->
 
     <!--&lt;!&ndash; Blog Section &ndash;&gt;-->
@@ -729,34 +806,34 @@
     <!--&lt;!&ndash; Contact Section End &ndash;&gt;-->
 
     <!--&lt;!&ndash; Footer Section Start &ndash;&gt;-->
-    <!--<footer>          -->
-      <!--<div class="container">-->
-        <!--<div class="row">-->
-          <!--&lt;!&ndash; Footer Links &ndash;&gt;-->
-          <!--<div class="col-lg-6 col-sm-6 col-xs-12">-->
-            <!--<ul class="footer-links">-->
-              <!--<li>-->
-                <!--<a href="#">Homepage</a>-->
-              <!--</li>-->
-              <!--<li>-->
-                <!--<a href="#">Services</a>-->
-              <!--</li>-->
-              <!--<li>-->
-                <!--<a href="#">About Us</a>-->
-              <!--</li>-->
-              <!--<li>-->
-                <!--<a href="#">Contact</a>-->
-              <!--</li>-->
-            <!--</ul>-->
-          <!--</div>-->
-          <!--<div class="col-lg-6 col-sm-6 col-xs-12">-->
-            <!--<div class="copyright">-->
-              <!--<p>All copyrights reserved &copy; 2018 - Designed & Developed by <a rel="nofollow" href="https://uideck.com">UIdeck</a></p>-->
-            <!--</div>-->
-          <!--</div>  -->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</footer>-->
+    <footer>
+      <div class="container">
+        <div class="row">
+          &lt;!&ndash; Footer Links &ndash;&gt;
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <ul class="footer-links">
+              <li>
+                <a href="#">Homepage</a>
+              </li>
+              <li>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <a href="#">About Us</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="copyright">
+              <p>All copyrights reserved &copy; 2018 - Designed & Developed by <a rel="nofollow" href="https://uideck.com">UIdeck</a></p>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </footer>
     <!-- Footer Section End --> 
 
     <!-- Go To Top Link -->
@@ -782,15 +859,11 @@
     <script src="js/jquery.nav.js"></script>    
     <script src="js/scrolling-nav.js"></script>    
     <script src="js/jquery.easing.min.js"></script>    
-    <script src="js/smoothscroll.js"></script>    
     <script src="js/jquery.slicknav.js"></script>     
     <script src="js/wow.js"></script>   
     <script src="js/jquery.vide.js"></script>
     <script src="js/jquery.counterup.min.js"></script>    
-    <script src="js/jquery.magnific-popup.min.js"></script>    
     <script src="js/waypoints.min.js"></script>    
-    <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>   
     <script src="js/main.js"></script>
 
   </body>

@@ -2,9 +2,9 @@ Seinfeld Data Analysis
 =======
 
 ## Contributors
-Andrew Rottier, acrottier@wpi.edu
-Cory Tapply, cmtapply@wpi.edu
-Diana Doherty, ddoherty2@wpi.edu
+Andrew Rottier, acrottier@wpi.edu  
+Cory Tapply, cmtapply@wpi.edu  
+Diana Doherty, ddoherty2@wpi.edu  
  
  
 To run this project, following the following steps:
