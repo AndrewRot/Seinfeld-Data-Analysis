@@ -120,3 +120,4 @@ jspm_packages
 build/Release
 
 .DS_Store
+*/.DS_Store
