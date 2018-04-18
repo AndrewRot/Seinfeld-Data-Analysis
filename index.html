@@ -122,7 +122,7 @@
     <section id="services" class="section">
       <div class="container">
         <div class="section-header">          
-          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Episode Popularity</h2>
+          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Season Information</h2>
           <hr class="lines wow zoomIn" data-wow-delay="0.3s">
           <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
         </div>
@@ -135,13 +135,13 @@
                 Episodes
               </a>
               <a id="Rank [Nielsen's]" onclick="loadRating('Rank [Nielsen]');" class="filter btn btn-common" data-filter=".design">
-                Rank </br> [Nielsen's]
+                Rank <br /> [Nielsen's]
               </a>
               <a id="Rating [Nielsen's]" onclick="loadRating('Rating  [Nielsen]');" class="filter btn btn-common" data-filter=".development">
-                Rating </br> [Nielsen's]
+                Rating <br /> [Nielsen's]
               </a>
               <a id="Rating [Rotten Tomato]" onclick="loadRating('Rating RT');" class="filter btn btn-common" data-filter=".print">
-                Rating </br> [Rotten Tomato]
+                Rating <br /> [Rotten Tomato]
               </a>
             </div>
           </div>
@@ -150,10 +150,6 @@
             <div id="chart"></div>
           </div>
         </div>
-      </div>
-
-
-
       </div>
     </section>
     <!-- Services Section End -->
@@ -217,7 +213,43 @@
         </div>
       </div>
     </section>
-    <!-- Features Section End -->    
+    <!-- Features Section End -->  
+    
+    <!-- Episode Popularity Section Start -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header">          
+          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Episode Popularity</h2>
+          <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
+        </div>
+
+        <!-- <div class="row">
+          <div class="col-md-2">
+            Top chart selection menu
+            <div class="controls text-left">
+              <a id="Episodes" onclick="loadRating('Episodes');" class="filter active btn btn-common" data-filter="all">
+                Episodes
+              </a>
+              <a id="Rank [Nielsen's]" onclick="loadRating('Rank [Nielsen]');" class="filter btn btn-common" data-filter=".design">
+                Rank <br /> [Nielsen's]
+              </a>
+              <a id="Rating [Nielsen's]" onclick="loadRating('Rating  [Nielsen]');" class="filter btn btn-common" data-filter=".development">
+                Rating <br /> [Nielsen's]
+              </a>
+              <a id="Rating [Rotten Tomato]" onclick="loadRating('Rating RT');" class="filter btn btn-common" data-filter=".print">
+                Rating <br /> [Rotten Tomato]
+              </a>
+            </div>
+          </div> -->
+
+          <div class="col-md-12">
+            <div id="episodePopularityChart"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Episode Popularity End -->
 
     <!-- Portfolio Section -->
     <section id="portfolios" class="section">
@@ -793,6 +825,7 @@
     <script src="js/waypoints.min.js"></script>    
     <script src="js/main.js"></script>
     <script src="js/seinfeld.js"></script>
+    <script src="js/episode-popularity.js"></script>
 
   </body>
 </html>
