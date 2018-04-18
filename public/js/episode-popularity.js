@@ -24,7 +24,6 @@ d3.queue()
 .defer(d3.csv, "/Data/episode_popularity.csv")
 .defer(d3.csv, "/Data/characterSentiment.csv")
 .await(function(error, file1, file2) {
-  console.log(file1, file2)
   file1.forEach(function(row) {
     categories.push(row[categoryColumn]);
     viewerCount.push(Number(row[viewCountColumn]));

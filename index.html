@@ -26,6 +26,8 @@
     <!-- Load d3.js and c3.js -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="js/c3.min.js"></script>
+    <script src="js/wordcloud.min.js"></script>
+    
 
   </head>
   <body>
@@ -109,7 +111,9 @@
           <div class="col-md-10">
             <div class="contents text-center">
               <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Seinfeld - Data Analysis Project</h1>
-              <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">The study of Seinfeld scripts and episode popularity</p>
+              <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"> &nbsp;</p>
+
+              <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms"> &nbsp;</p>
               <!--<a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Download</a>-->
             </div>
           </div>
@@ -150,6 +154,45 @@
             <div id="chart"></div>
           </div>
         </div>
+      </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- Word Cloud Section Start -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header">          
+          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Word Frequencies</h2>
+          <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
+        </div>
+
+        <div class="row">
+        
+          <div class="col-md-2">
+            <div class="controls text-left">
+              <a id="Elaine" onclick="loadWC('Elaine');" class="filter active btn btn-common" data-filter="all">
+                  Elaine
+              </a>
+              <a id="George" onclick="loadWC('George');" class="filter btn btn-common" data-filter=".design">
+                  George </br> 
+              </a>
+              <a id="Jerry" onclick="loadWC('Jerry');" class="filter btn btn-common" data-filter=".development">
+                  Jerry </br>
+              </a>
+              <a id="Kramer" onclick="loadWC('Kramer');" class="filter btn btn-common" data-filter=".print">
+                  Kramer </br>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-10" id="wordcloud" width="800" height="600"></div>
+          </div>
+        </div>
+      </div>
+
+
+
       </div>
     </section>
     <!-- Services Section End -->
@@ -826,6 +869,7 @@
     <script src="js/main.js"></script>
     <script src="js/seinfeld.js"></script>
     <script src="js/episode-popularity.js"></script>
+    <script src="js/wordcloud.js"></script>
 
   </body>
 </html>
