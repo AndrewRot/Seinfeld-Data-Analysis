@@ -122,9 +122,9 @@
     <section id="services" class="section">
       <div class="container">
         <div class="section-header">          
-          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Episode Popularity</h2>
+          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Season Popularity</h2>
           <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
+          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">The below graph contains information regarding the 9 seasons of Seinfeld and their popularity according to different critics.</p>
         </div>
 
         <div class="row">
@@ -132,7 +132,7 @@
             <!-- Top chart selection menu -->
             <div class="controls text-left">
               <a id="Episodes" onclick="loadRating('Episodes');" class="filter active btn btn-common" data-filter="all">
-                Episodes
+                # of Episodes
               </a>
               <a id="Rank [Nielsen's]" onclick="loadRating('Rank [Nielsen]');" class="filter btn btn-common" data-filter=".design">
                 Rank </br> [Nielsen's]
@@ -162,59 +162,36 @@
     <section id="features" class="section" data-stellar-background-ratio="0.2">
       <div class="container">
         <div class="section-header">          
-          <h2 class="section-title">Some Features</h2>
+          <h2 class="section-title">Episode Popularity</h2>
           <hr class="lines">
-          <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
+          <p class="section-subtitle">This section contains statistics based on individual episode data from Seinfeld.</p>
         </div>
+
+
         <div class="row">
-          <div class="col-lg-8 col-md-12 col-xs-12">
-            <div class="container">
-              <div class="row">
-                 <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
-                    <span class="icon">
-                      <i class="lnr lnr-rocket"></i>
-                    </span>
-                    <div class="text">
-                      <h4>Bootstrap 4 Based</h4>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
-                    <span class="icon">
-                      <i class="lnr lnr-laptop-phone"></i>
-                    </span>
-                    <div class="text">
-                      <h4>Fully Responsive</h4>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
-                    <span class="icon">
-                      <i class="lnr lnr-layers"></i>
-                    </span>
-                    <div class="text">
-                      <h4>Parallax Background</h4>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
-                    <span class="icon">
-                      <i class="lnr lnr-cog"></i>
-                    </span>
-                    <div class="text">
-                      <h4>Easy to Customize</h4>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                  </div>
-              </div>
+          <div class="col-md-12">
+            <!-- Portfolio Controller/Buttons -->
+            <div class="controls text-center">
+              <a class="filter active btn btn-common" data-filter="all">
+                Popularity
+              </a>
+              <a class="filter btn btn-common" data-filter=".design">
+                Design
+              </a>
+              <a class="filter btn btn-common" data-filter=".development">
+                Development
+              </a>
+              <a class="filter btn btn-common" data-filter=".print">
+                Print
+              </a>
             </div>
+            <!-- Portfolio Controller/Buttons Ends-->
           </div>
-          <div class="col-lg-4 col-xs-12">
-            <div class="show-box">
-              <img class="img-fulid" src="img/features/feature.png" alt="">
-            </div>
+
+          <div class="col-md-12">
+            <div id="chart2"></div>
           </div>
-        </div>
+
       </div>
     </section>
     <!-- Features Section End -->    
@@ -793,6 +770,7 @@
     <script src="js/waypoints.min.js"></script>    
     <script src="js/main.js"></script>
     <script src="js/seinfeld.js"></script>
+    <script src="js/seinfeld_episode.js"></script>
 
   </body>
 </html>
