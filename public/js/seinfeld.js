@@ -47,4 +47,13 @@ d3.csv("/Data/season_data.csv", function(error, data) {
 function loadRating(dataToShow){
     chart.hide(['Episodes', 'Rating RT', 'Rank [Nielsen]', 'Rating  [Nielsen]']);
     chart.show([dataToShow]);
+
+    //CSS manipulation
+    document.getElementById("Episodes").classList.remove('active');
+    document.getElementById("Rank [Nielsen]").classList.remove('active');
+    document.getElementById("Rating  [Nielsen]").classList.remove('active');
+    document.getElementById("Rating RT").classList.remove('active');
+
+    document.getElementById(dataToShow).classList.add('active');
+
 }
