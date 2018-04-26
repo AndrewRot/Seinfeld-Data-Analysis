@@ -88,8 +88,22 @@ d3.queue()
         } ,
         type: 'category',
       },
+      y: {
+        min: 0,
+        padding: 0,
+        label: {
+          position: 'outer-middle',
+          text: 'Views in Millions',
+        },
+      },
       y2: {
-        show: true
+        show: true,
+        min: -1,
+        padding: 0,
+        label: {
+          position: 'outer-middle',
+          text: 'Sentiment',
+        },
       }
     },
     subchart: {

@@ -38,7 +38,11 @@ d3.csv("/Data/season_data.csv", function(error, data) {
                     text: 'Season Number',
                 } ,
                 type: 'category',
-            }
+            },
+            y: {
+              min: 0,
+              padding: 0,
+            },
         }
     });
     chart.hide(['Rating RT', 'Rank [Nielsen]', 'Rating  [Nielsen]']);
