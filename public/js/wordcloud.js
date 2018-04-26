@@ -17,18 +17,17 @@ function hoverTooltip(item, dimension, event){
 		document.getElementById("wordcloudTooltipTitle").innerHTML = item[0]
 		document.getElementById("wordcloudTooltipCount").innerHTML = item[1]
 		document.getElementById("wordcloudTooltip").setAttribute("style", "display:block;top:" + event.y + "px;left:" + event.x + "px;")
-		console.log(event.type)
+		// console.log(event.type)
 		// console.log(item)
 	}
 }
 function createWordCloud(charID){
 	filteredData = frequencies.filter(getCharacterFromEpisode(characterNames[charID])) //.slice(0,300)
-	
 	line = []
 	for (i = 0; i < filteredData.length; i++) { 
 		line.push([filteredData[i]['Word'],filteredData[i]['Frequency']])
 	}
-	WordCloud(characters[charID], { list: line , hover: hoverTooltip} );
+	WordCloud(characters[charID], { list: line , hover: hoverTooltip, weightFactor: .2, drawOutOfBound: false, shape: 'square'} );
 	
 	characterCalculated[charID] = true;
 	document.getElementById('wordcloud').appendChild(characters[charID])
