@@ -3,25 +3,37 @@ var characters = createCharacter()
 var characterNames = ["ELAINE", "GEORGE", "JERRY", "KRAMER"]
 var characterCalculated = [false, false, false, false]
 var frequencies
-
-d3.csv("/Data/word_frequencies_main.csv", function(error, data) {
+document.getElementById("wordcloud").addEventListener('mouseleave', (e) => {
+	document.getElementById("wordcloudTooltip").setAttribute("style", "display:none;")
+})
+d3.csv("/Data/word_frequencies_reduced.csv", function(error, data) {
 	var defaultChar = 0;
 	frequencies = data
 	createWordCloud(defaultChar);
 });
 
+function hoverTooltip(item, dimension, event){
+	if (item) {
+		document.getElementById("wordcloudTooltipTitle").innerHTML = item[0]
+		document.getElementById("wordcloudTooltipCount").innerHTML = item[1]
+		document.getElementById("wordcloudTooltip").setAttribute("style", "display:block;top:" + event.y + "px;left:" + event.x + "px;")
+		console.log(event.type)
+		// console.log(item)
+	}
+}
 function createWordCloud(charID){
-	filteredData = frequencies.filter(getCharacterFromEpisode(characterNames[charID]))
+	filteredData = frequencies.filter(getCharacterFromEpisode(characterNames[charID])) //.slice(0,300)
 	
 	line = []
 	for (i = 0; i < filteredData.length; i++) { 
 		line.push([filteredData[i]['Word'],filteredData[i]['Frequency']])
 	}
-	WordCloud(characters[charID], { list: line } );
+	WordCloud(characters[charID], { list: line , hover: hoverTooltip} );
 	
-	characterCalculated[charID] = true
+	characterCalculated[charID] = true;
 	document.getElementById('wordcloud').appendChild(characters[charID])
 }
+
 function createCharacter(){
 	var elaine = document.createElement('canvas');
 	var george = document.createElement('canvas');

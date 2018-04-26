@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/c3.min.css">
     <link rel="stylesheet" href="css/seinfeld.css">
+    <link rel="stylesheet" href="css/wordcloud.css">
+
 
     <!-- Load d3.js and c3.js -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -165,8 +167,12 @@
           <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">This section contains word clouds for the four main characters of Seinfeld. The size of the words correspond to the frequency of the number of times each character said each word.</p>
         </div>
 
-        <div class="row">
-        
+        <div class="row" >
+          <div id="wordcloudTooltip">
+            <span id ="wordcloudTooltipTitle"></span>
+            <span id ="wordcloudTooltipCount"></span>
+          </div>
+         
           <div class="col-md-2">
             <div class="controls text-left">
               <a id="Elaine" onclick="loadWC('Elaine');" class="filter active btn btn-common" data-filter="all">
