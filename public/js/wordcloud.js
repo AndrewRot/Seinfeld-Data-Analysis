@@ -68,7 +68,15 @@ function loadWC(character) {
 			break;
 		default:
 			charID = 0
-	}
+  }
+  
+  //CSS manipulation
+  document.getElementById("George").classList.remove('active');
+  document.getElementById("Jerry").classList.remove('active');
+  document.getElementById("Kramer").classList.remove('active');
+  document.getElementById("Elaine").classList.remove('active');
+
+  document.getElementById(character).classList.add('active');
 
 	var wordcloud = document.getElementById('wordcloud')
 	if (characterCalculated[charID]){
