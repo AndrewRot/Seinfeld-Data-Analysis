@@ -31,7 +31,6 @@ d3.csv("/Data/director_popularity.csv", function(error, data) {
         box[count].push(Number(row.Average));
         count+=1;
     });
-    console.log(box);
 
     dirchart = c3.generate({
         bindto: '#directorPopularityChart',
