@@ -1451,14 +1451,14 @@ if (typeof Object.create !== "function") {
 
     $.fn.owlCarousel.options = {
 
-        items : 5,
+        items : 1,
         itemsCustom : false,
-        itemsDesktop : [1199, 4],
-        itemsDesktopSmall : [979, 3],
-        itemsTablet : [768, 2],
+        itemsDesktop : 1,
+        itemsDesktopSmall : 1,
+        itemsTablet : 1,
         itemsTabletSmall : false,
-        itemsMobile : [479, 1],
-        singleItem : false,
+        itemsMobile : 1,
+        singleItem : true,
         itemsScaleUp : false,
 
         slideSpeed : 200,
@@ -1466,7 +1466,7 @@ if (typeof Object.create !== "function") {
         rewindSpeed : 1000,
 
         autoPlay : false,
-        stopOnHover : false,
+        stopOnHover : true,
 
         navigation : false,
         navigationText : ["prev", "next"],
