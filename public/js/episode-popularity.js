@@ -60,6 +60,12 @@ d3.queue()
         KramerSentiment,
         ElaineSentiment,
       ],
+      color: function (color, d) {
+        switch (d.id) {
+          case viewCountColumn: return '#a6cee3';
+          default: return color;
+        }
+      },
       types: {
         [viewCountColumn]: 'bar',
         Jerry: 'line',
