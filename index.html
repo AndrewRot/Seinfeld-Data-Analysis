@@ -195,13 +195,13 @@
               Elaine
             </a>
             <a id="George" onclick="loadWC('George');" class="filter btn btn-common" data-filter=".design">
-              George </br> 
+              George <br /> 
             </a>
             <a id="Jerry" onclick="loadWC('Jerry');" class="filter btn btn-common" data-filter=".development">
-              Jerry </br>
+              Jerry <br />
             </a>
             <a id="Kramer" onclick="loadWC('Kramer');" class="filter btn btn-common" data-filter=".print">
-              Kramer </br>
+              Kramer <br />
             </a>
           </div>
         </div>
@@ -209,59 +209,73 @@
         <div class="col-md-10" id="wordcloud" width="800" height="600"></div>
       </div>
     </div>
-  </div>
+  </section>
+  <!-- Services Section End -->
   
-</div>
-</section>
-<!-- Services Section End -->
-
-<hr>
-
-<!-- Episode Popularity Based on Director -->
-<section id="directors" class="directors">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Director Popularity</h2>
-      <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-      <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">This section contains a graph of popularity of each director. Values are calculated by the average views each dirctor got for the episode he directed.</p>
+  <hr>
+  
+  <!-- Episode Popularity Based on Director -->
+  <section id="directors" class="directors">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Director Popularity</h2>
+        <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+        <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">This section contains a graph of popularity of each director. Values are calculated by the average views each dirctor got for the episode he directed.</p>
+      </div>
+      
+      <div class="col-md-12">
+        <div id="directorPopularityChart"></div>
+      </div>
     </div>
-    
-    <div class="col-md-12">
-      <div id="directorPopularityChart"></div>
+  </section>
+  <!-- Episode Popularity End -->
+  
+  <hr>
+  
+  <!-- Episode Popularity Section Start -->
+  <!--TODO update id and classes so that nav buttons reroute you to the proper sections-->
+  <section id="episodes" class="episodes">
+    <div class="container">
+      <div class="section-header">          
+        <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Episode Popularity</h2>
+        <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+        <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
+      </div>
+      
+      <div class="col-md-12">
+        <div id="episodePopularityChart">
+          
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-</section>
-<!-- Episode Popularity End -->
-
-<hr>
-
-<!-- Episode Popularity Section Start -->
-<!--TODO update id and classes so that nav buttons reroute you to the proper sections-->
-<section id="episodes" class="episodes">
-  <div class="container">
-    <div class="section-header">          
-      <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Episode Popularity</h2>
-      <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-      <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
+  </section>
+  <!-- Episode Popularity End -->
+  
+  <!-- Views per Sentiment Start -->
+  <!--TODO update id and classes so that nav buttons reroute you to the proper sections-->
+  <section id="views-sentiment" class="episodes">
+    <div class="container">
+      <div class="section-header">          
+        <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Average Views by Character Sentiment</h2>
+        <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+        <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, dignissimos! <br> Lorem ipsum dolor sit amet, consectetur.</p>
+      </div>
+      
+      <div class="col-md-12">
+        <div id="viewSentimentChart"></div>
+      </div>
     </div>
-    
-    <div class="col-md-12">
-      <div id="episodePopularityChart"></div>
-    </div>
-  </div>
-</div>
-</section>
-<!-- Episode Popularity End -->
-
-<hr>
-<!-- correlation  -->
-<div id="testimonial" class="section" data-stellar-background-ratio="0.1">
+  </section>
+  <!-- Views per Sentiment End -->
+  
+  <hr>
+  <!-- correlation  -->
+  <div id="testimonial" class="section" data-stellar-background-ratio="0.1">
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col-md-12">
           <div class="touch-slider owl-carousel owl-theme">
-
+            
             <!-- *************** Carosel Item  *************** -->
             <div class="col-md-12">
               <div class="section-header">
@@ -274,7 +288,7 @@
                 <div id="all-line-episode-pop-chart"></div>
               </div>
             </div>
-
+            
             <!-- *************** Carosel Item  *************** -->
             <div class="col-md-12">
               <div class="section-header">
@@ -282,12 +296,12 @@
                 <hr class="lines wow zoomIn" data-wow-delay="0.3s">
                 <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">There is a Pearson's Correlation of (r = 0.287959951). This means there is a slight correlation between numbers of lines in an episode and the episode's popularity.</p>
               </div>
-                
+              
               <div class="col-md-12">
                 <div id="elaine-line-episode-pop-chart"></div>
               </div>
             </div>
-
+            
             <!-- *************** Carosel Item  *************** -->
             <div class="col-md-12">
               <div class="section-header">
@@ -302,48 +316,48 @@
             </div>
             <!-- *************** Carosel Item  *************** -->
             <div class="col-md-12">
-                <div class="section-header">
-                  <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Episode Popularity for Number of Lines Spoken: Jerry</h2>
-                  <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-                  <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">There is a Pearson's Correlation of (r = 0.607406977). This means there is a slight correlation between numbers of lines in an episode and the episode's popularity.</p>
-                </div>
-                
-                <div class="col-md-12">
-                  <div id="jerry-line-episode-pop-chart"></div>
-                </div>
+              <div class="section-header">
+                <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Episode Popularity for Number of Lines Spoken: Jerry</h2>
+                <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+                <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">There is a Pearson's Correlation of (r = 0.607406977). This means there is a slight correlation between numbers of lines in an episode and the episode's popularity.</p>
               </div>
+              
+              <div class="col-md-12">
+                <div id="jerry-line-episode-pop-chart"></div>
+              </div>
+            </div>
             <!-- *************** Carosel Item  *************** -->
             <div class="col-md-12">
-                <div class="section-header">
-                  <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Episode Popularity for Number of Lines Spoken: Kramer</h2>
-                  <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-                  <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">There is a Pearson's Correlation of (r = 0.339408764). This means there is a slight correlation between numbers of lines in an episode and the episode's popularity.</p>
-                </div>
-                
-                <div class="col-md-12">
-                  <div id="kramer-line-episode-pop-chart"></div>
-                </div>
+              <div class="section-header">
+                <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Episode Popularity for Number of Lines Spoken: Kramer</h2>
+                <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+                <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">There is a Pearson's Correlation of (r = 0.339408764). This means there is a slight correlation between numbers of lines in an episode and the episode's popularity.</p>
               </div>
+              
+              <div class="col-md-12">
+                <div id="kramer-line-episode-pop-chart"></div>
+              </div>
+            </div>
             
           </div>
         </div>
       </div>       
     </div>
   </div>
-
-<hr>
-
-
-
-
-<hr>
-<!-- correlation  -->
-<div id="emotion-correlation" class="section" data-stellar-background-ratio="0.1">
+  
+  <hr>
+  
+  
+  
+  
+  <hr>
+  <!-- correlation  -->
+  <div id="emotion-correlation" class="section" data-stellar-background-ratio="0.1">
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col-md-12">
           <div class="touch-slider owl-carousel owl-theme">
-
+            
             <!-- *************** Carosel Item  *************** -->
             <div class="col-md-12">
               <div class="section-header">
@@ -356,7 +370,7 @@
                 <div id="all_sentiment_correlation"></div>
               </div>
             </div>
-
+            
             <!-- *************** Carosel Item  *************** -->
             <div class="col-md-12">
               <div class="section-header">
@@ -364,12 +378,12 @@
                 <hr class="lines wow zoomIn" data-wow-delay="0.3s">
                 <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">There is a Pearson's Correlation of (r = -0.044247251). This means there is no correlation between character sentiment and the episode's popularity.</p>
               </div>
-                
+              
               <div class="col-md-12">
                 <div id="elaine_sentiment_correlation"></div>
               </div>
             </div>
-
+            
             <!-- *************** Carosel Item  *************** -->
             <div class="col-md-12">
               <div class="section-header">
@@ -384,166 +398,167 @@
             </div>
             <!-- *************** Carosel Item  *************** -->
             <div class="col-md-12">
-                <div class="section-header">
-                  <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Episode Popularity for Sentiment: Jerry</h2>
-                  <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-                  <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">There is a Pearson's Correlation of (r = -0.029920464). This means there is no correlation between character sentiment and the episode's popularity.</p>
-                </div>
-                
-                <div class="col-md-12">
-                  <div id="jerry_sentiment_correlation"></div>
-                </div>
+              <div class="section-header">
+                <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Episode Popularity for Sentiment: Jerry</h2>
+                <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+                <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">There is a Pearson's Correlation of (r = -0.029920464). This means there is no correlation between character sentiment and the episode's popularity.</p>
               </div>
+              
+              <div class="col-md-12">
+                <div id="jerry_sentiment_correlation"></div>
+              </div>
+            </div>
             <!-- *************** Carosel Item  *************** -->
             <div class="col-md-12">
-                <div class="section-header">
-                  <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Episode Popularity for Sentiment: Kramer</h2>
-                  <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-                  <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">There is a Pearson's Correlation of (r = 0.065855177). This means there is no correlation between character sentiment and the episode's popularity.</p>
-                </div>
-                
-                <div class="col-md-12">
-                  <div id="kramer_sentiment_correlation"></div>
-                </div>
+              <div class="section-header">
+                <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Episode Popularity for Sentiment: Kramer</h2>
+                <hr class="lines wow zoomIn" data-wow-delay="0.3s">
+                <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">There is a Pearson's Correlation of (r = 0.065855177). This means there is no correlation between character sentiment and the episode's popularity.</p>
               </div>
+              
+              <div class="col-md-12">
+                <div id="kramer_sentiment_correlation"></div>
+              </div>
+            </div>
             
           </div>
         </div>
       </div>       
     </div>
   </div>
-
-<hr>
-
-
-
-<!--Team section Start-->
-<section id="team" class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Our Team</h2>
-      <hr class="lines">
-      <p class="section-subtitle">Meet the team that created this data visualization!</p>
-    </div>
-    <div class="row">
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <div class="single-team">
-          <img src="img/team/team1.jpg" alt="">
-          <div class="team-details">
-            <div class="team-inner">
-              <h4 class="team-title">Andrew Rottier</h4>
-              <p>Chief Technical Officer</p>
-              <ul class="social-list">
-                <li class="google-plus"><a href="https://github.com/AndrewRot"><i class="fa fa-github-square"></i></a></li>
-                <li class="linkedin"><a href="https://www.linkedin.com/in/andrewrottier/"><i class="fa fa-linkedin"></i></a></li>
-              </ul>
+  
+  <hr>
+  
+  
+  
+  <!--Team section Start-->
+  <section id="team" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Team</h2>
+        <hr class="lines">
+        <p class="section-subtitle">Meet the team that created this data visualization!</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-xs-12">
+          <div class="single-team">
+            <img src="img/team/team1.jpg" alt="">
+            <div class="team-details">
+              <div class="team-inner">
+                <h4 class="team-title">Andrew Rottier</h4>
+                <p>Chief Technical Officer</p>
+                <ul class="social-list">
+                  <li class="google-plus"><a href="https://github.com/AndrewRot"><i class="fa fa-github-square"></i></a></li>
+                  <li class="linkedin"><a href="https://www.linkedin.com/in/andrewrottier/"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-xs-12">
+          <div class="single-team">
+            <img src="img/team/team2.jpg" alt="">
+            <div class="team-details">
+              <div class="team-inner">
+                <h4 class="team-title">Cory Tapply</h4>
+                <p>CEO & Co-Founder</p>
+                <ul class="social-list">
+                  <li class="google-plus"><a href="https://github.com/CTapply"><i class="fa fa-github-square"></i></a></li>
+                  <li class="linkedin"><a href="https://www.linkedin.com/in/cmtapply/"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-xs-12">
+          <div class="single-team">
+            <img src="img/team/team3.jpg" alt="">
+            <div class="team-details">
+              <div class="team-inner">
+                <h4 class="team-title">Diana Doherty</h4>
+                <p>Business Manager</p>
+                <ul class="social-list">
+                  <li class="google-plus"><a href="https://github.com/dianadoherty"><i class="fa fa-github-square"></i></a></li>
+                  <li class="linkedin"><a href="https://www.linkedin.com/in/diana-doherty-940998120/"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <div class="single-team">
-          <img src="img/team/team2.jpg" alt="">
-          <div class="team-details">
-            <div class="team-inner">
-              <h4 class="team-title">Cory Tapply</h4>
-              <p>CEO & Co-Founder</p>
-              <ul class="social-list">
-                <li class="google-plus"><a href="https://github.com/CTapply"><i class="fa fa-github-square"></i></a></li>
-                <li class="linkedin"><a href="https://www.linkedin.com/in/cmtapply/"><i class="fa fa-linkedin"></i></a></li>
-              </ul>
-            </div>
-          </div>
+    </div>
+  </section>
+  <!-- Team section End -->
+  
+  
+  
+  <!--&lt;!&ndash; Footer Section Start &ndash;&gt;-->
+  <footer>
+    <div class="container">
+      <div class="row">
+        &lt;!&ndash; Footer Links &ndash;&gt;
+        <div class="col-lg-6 col-sm-6 col-xs-12">
+          <ul class="footer-links">
+            <li>
+              <a href="#">Homepage</a>
+            </li>
+            <li>
+              <a href="#">Services</a>
+            </li>
+            <li>
+              <a href="#">About Us</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-xs-12">
-        <div class="single-team">
-          <img src="img/team/team3.jpg" alt="">
-          <div class="team-details">
-            <div class="team-inner">
-              <h4 class="team-title">Diana Doherty</h4>
-              <p>Business Manager</p>
-              <ul class="social-list">
-                <li class="google-plus"><a href="https://github.com/dianadoherty"><i class="fa fa-github-square"></i></a></li>
-                <li class="linkedin"><a href="https://www.linkedin.com/in/diana-doherty-940998120/"><i class="fa fa-linkedin"></i></a></li>
-              </ul>
-            </div>
+        <div class="col-lg-6 col-sm-6 col-xs-12">
+          <div class="copyright">
+            <p>All copyrights reserved &copy; 2018 - Designed & Developed by <a rel="nofollow" href="https://uideck.com">UIdeck</a></p>
           </div>
-        </div>
+        </div> 
       </div>
     </div>
-  </div>
-</section>
-<!-- Team section End -->
-
-
-
-<!--&lt;!&ndash; Footer Section Start &ndash;&gt;-->
-<footer>
-  <div class="container">
-    <div class="row">
-      &lt;!&ndash; Footer Links &ndash;&gt;
-      <div class="col-lg-6 col-sm-6 col-xs-12">
-        <ul class="footer-links">
-          <li>
-            <a href="#">Homepage</a>
-          </li>
-          <li>
-            <a href="#">Services</a>
-          </li>
-          <li>
-            <a href="#">About Us</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-6 col-sm-6 col-xs-12">
-        <div class="copyright">
-          <p>All copyrights reserved &copy; 2018 - Designed & Developed by <a rel="nofollow" href="https://uideck.com">UIdeck</a></p>
-        </div>
-      </div> 
+  </footer>
+  <!-- Footer Section End --> 
+  
+  <!-- Go To Top Link -->
+  <a href="#" class="back-to-top">
+    <i class="lnr lnr-arrow-up"></i>
+  </a>
+  
+  <div id="loader">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
     </div>
-  </div>
-</footer>
-<!-- Footer Section End --> 
-
-<!-- Go To Top Link -->
-<a href="#" class="back-to-top">
-  <i class="lnr lnr-arrow-up"></i>
-</a>
-
-<div id="loader">
-  <div class="spinner">
-    <div class="double-bounce1"></div>
-    <div class="double-bounce2"></div>
-  </div>
-</div>     
-
-<!-- jQuery first, then Tether, then Bootstrap JS. -->
-<script src="js/jquery-min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.mixitup.js"></script>
-<script src="js/nivo-lightbox.js"></script>
-<script src="js/owl.carousel.js"></script>    
-<script src="js/jquery.stellar.min.js"></script>    
-<script src="js/jquery.nav.js"></script>    
-<script src="js/scrolling-nav.js"></script>    
-<script src="js/jquery.easing.min.js"></script>    
-<script src="js/jquery.slicknav.js"></script>     
-<script src="js/wow.js"></script>   
-<script src="js/jquery.vide.js"></script>
-<script src="js/jquery.counterup.min.js"></script>    
-<script src="js/waypoints.min.js"></script>    
-<script src="js/main.js"></script>
-<script src="js/seinfeld.js"></script>
-<script src="js/episode-popularity.js"></script>
-<script src="js/director-popularity.js"></script>
-<script src="js/wordcloud.js"></script>
-<script src="js/line-episode-popularity.js"></script>
-<script src="js/sentiment-correlation.js"></script>
-
+  </div>     
+  
+  <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  <script src="js/jquery-min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.mixitup.js"></script>
+  <script src="js/nivo-lightbox.js"></script>
+  <script src="js/owl.carousel.js"></script>    
+  <script src="js/jquery.stellar.min.js"></script>    
+  <script src="js/jquery.nav.js"></script>    
+  <script src="js/scrolling-nav.js"></script>    
+  <script src="js/jquery.easing.min.js"></script>    
+  <script src="js/jquery.slicknav.js"></script>     
+  <script src="js/wow.js"></script>   
+  <script src="js/jquery.vide.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>    
+  <script src="js/waypoints.min.js"></script>    
+  <script src="js/main.js"></script>
+  <script src="js/seinfeld.js"></script>
+  <script src="js/episode-popularity.js"></script>
+  <script src="js/director-popularity.js"></script>
+  <script src="js/wordcloud.js"></script>
+  <script src="js/line-episode-popularity.js"></script>
+  <script src="js/views-sentiment.js"></script>
+  <script src="js/sentiment-correlation.js"></script>
+  
 </body>
 </html>

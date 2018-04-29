@@ -1,4 +1,4 @@
-var sentimentAll = ['Sentiment'];
+var sentimentAll = ['Average Sentiment'];
 var sentimentElaine= ['Elaine Sentiment'];
 var sentimentGeorge= ['George Sentiment'];
 var sentimentJerry= ['Jerry Sentiment'];
@@ -11,9 +11,9 @@ d3.csv("/Data/sentiment_all.csv", function(error, data) {
         sentimentAll.push(Number(row["Sentiment"]));
         sentimentElaine.push(Number(row["Elaine Sentiment"]));
         sentimentGeorge.push(Number(row["George Sentiment"]));
-        sentimentJerry.push(Number(row["Elaine Sentiment"]));
-        sentimentKramer.push(Number(row["Elaine Sentiment"]));
-        numberOfViews.push(parseInt(row["Views"]));
+        sentimentJerry.push(Number(row["Jerry Sentiment"]));
+        sentimentKramer.push(Number(row["Kramer Sentiment"]));
+        numberOfViews.push(Number(row["Views"]));
         
     });
 
@@ -21,16 +21,27 @@ d3.csv("/Data/sentiment_all.csv", function(error, data) {
         bindto: '#all_sentiment_correlation',
         data: {
             xs: {
-                Sentiment: 'Views',
+              'Average Sentiment': 'Views',
             },
             columns: [
                 sentimentAll, numberOfViews
             ],
             type: 'scatter'
         },
+        axis: {
+          y: {
+            label: {
+              position: 'outer-middle',
+              text: 'Sentiment',
+            },
+            min: -1,
+            max: 1,
+            padding: 0,
+          },
+        },
         tooltip: {
             format: {
-                title: function (title) { return 'Sentiment Count ' + title; }
+                title: function (title) { return 'Episode Views ' + title + ' Million'; }
             }
         },
     });
@@ -46,9 +57,20 @@ d3.csv("/Data/sentiment_all.csv", function(error, data) {
             ],
             type: 'scatter'
         },
+        axis: {
+          y: {
+            label: {
+              position: 'outer-middle',
+              text: 'Sentiment',
+            },
+            min: -1,
+            max: 1,
+            padding: 0,
+          },
+        },
         tooltip: {
             format: {
-                title: function (title) { return 'Sentiment Count ' + title; }
+                title: function (title) { return 'Episode Views ' + title + ' Million'; }
             }
         },
     });
@@ -63,9 +85,20 @@ d3.csv("/Data/sentiment_all.csv", function(error, data) {
             ],
             type: 'scatter'
         },
+        axis: {
+          y: {
+            label: {
+              position: 'outer-middle',
+              text: 'Sentiment',
+            },
+            min: -1,
+            max: 1,
+            padding: 0,
+          },
+        },
         tooltip: {
             format: {
-                title: function (title) { return 'Sentiment Count ' + title; }
+                title: function (title) { return 'Episode Views ' + title + ' Million'; }
             }
         },
     });
@@ -80,9 +113,20 @@ d3.csv("/Data/sentiment_all.csv", function(error, data) {
             ],
             type: 'scatter'
         },
+        axis: {
+          y: {
+            label: {
+              position: 'outer-middle',
+              text: 'Sentiment',
+            },
+            min: -1,
+            max: 1,
+            padding: 0,
+          },
+        },
         tooltip: {
             format: {
-                title: function (title) { return 'Sentiment Count ' + title; }
+                title: function (title) { return 'Episode Views ' + title + ' Million'; }
             }
         },
     });
@@ -97,9 +141,20 @@ d3.csv("/Data/sentiment_all.csv", function(error, data) {
             ],
             type: 'scatter'
         },
+        axis: {
+          y: {
+            label: {
+              position: 'outer-middle',
+              text: 'Sentiment',
+            },
+            min: -1,
+            max: 1,
+            padding: 0,
+          },
+        },
         tooltip: {
             format: {
-                title: function (title) { return 'Sentiment Count ' + title; }
+                title: function (title) { return 'Episode Views ' + title + ' Million'; }
             }
         },
     });

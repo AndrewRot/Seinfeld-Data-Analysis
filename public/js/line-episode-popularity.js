@@ -1,10 +1,3 @@
-var allScatterplot = c3.generate({
-    bindto: '#all-line-episode-pop-chart',
-    data: {
-        columns: [ ]
-    },
-});
-
 // Episode	Lines	Views
 var numberOfLinesAll = ['Lines'];
 var numberOfLinesElaine= ['Elaine Lines'];
@@ -22,7 +15,7 @@ d3.csv("/Data/line-episide-popularity.csv", function(error, data) {
         numberOfLinesGeorge.push(Number(row["George Lines"]));
         numberOfLinesJerry.push(Number(row["Elaine Lines"]));
         numberOfLinesKramer.push(Number(row["Elaine Lines"]));
-        numberOfViews.push(parseInt(row["Views"]));
+        numberOfViews.push(Number(row["Views"]));
         
     });
 
@@ -37,21 +30,21 @@ d3.csv("/Data/line-episide-popularity.csv", function(error, data) {
             ],
             type: 'scatter'
         },
+        axis: {
+          y: {
+            label: {
+              position: 'outer-middle',
+              text: 'Number of Lines',
+            },
+            min: 0,
+            padding: 0,
+          },
+        },
         tooltip: {
             format: {
-                title: function (title) { return 'Lines Count ' + title; }
+                title: function (title) { return 'Episode Views ' + title + ' Million'; }
             }
         },
-        // axis: {
-        //     x: {
-        //         categories: ['1','2', '3', '4', '5', '6', '7', '8', '9'],
-        //         label: {
-        //             position: 'outer-center',
-        //             text: 'Season Number',
-        //         } ,
-        //         type: 'scatter',
-        //     }
-        // }
     });
 
     c3.generate({
@@ -65,9 +58,19 @@ d3.csv("/Data/line-episide-popularity.csv", function(error, data) {
             ],
             type: 'scatter'
         },
+        axis: {
+          y: {
+            label: {
+              position: 'outer-middle',
+              text: 'Number of Lines',
+            },
+            min: 0,
+            padding: 0,
+          },
+        },
         tooltip: {
             format: {
-                title: function (title) { return 'Lines Count ' + title; }
+                title: function (title) { return 'Episode Views ' + title + ' Million'; }
             }
         },
     });
@@ -82,9 +85,19 @@ d3.csv("/Data/line-episide-popularity.csv", function(error, data) {
             ],
             type: 'scatter'
         },
+        axis: {
+          y: {
+            label: {
+              position: 'outer-middle',
+              text: 'Number of Lines',
+            },
+            min: 0,
+            padding: 0,
+          },
+        },
         tooltip: {
             format: {
-                title: function (title) { return 'Lines Count ' + title; }
+                title: function (title) { return 'Episode Views ' + title + ' Million'; }
             }
         },
     });
@@ -99,9 +112,19 @@ d3.csv("/Data/line-episide-popularity.csv", function(error, data) {
             ],
             type: 'scatter'
         },
+        axis: {
+          y: {
+            label: {
+              position: 'outer-middle',
+              text: 'Number of Lines',
+            },
+            min: 0,
+            padding: 0,
+          },
+        },
         tooltip: {
             format: {
-                title: function (title) { return 'Lines Count ' + title; }
+                title: function (title) { return 'Episode Views ' + title + ' Million'; }
             }
         },
     });
@@ -116,9 +139,19 @@ d3.csv("/Data/line-episide-popularity.csv", function(error, data) {
             ],
             type: 'scatter'
         },
+        axis: {
+          y: {
+            label: {
+              position: 'outer-middle',
+              text: 'Number of Lines',
+            },
+            min: 0,
+            padding: 0,
+          },
+        },
         tooltip: {
             format: {
-                title: function (title) { return 'Lines Count ' + title; }
+                title: function (title) { return 'Episode Views ' + title + ' Million'; }
             }
         },
     });
