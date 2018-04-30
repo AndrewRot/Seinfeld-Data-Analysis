@@ -16,9 +16,7 @@ function hoverTooltip(item, dimension, event){
 	if (item) {
 		document.getElementById("wordcloudTooltipTitle").innerHTML = item[0]
 		document.getElementById("wordcloudTooltipCount").innerHTML = item[1]
-		document.getElementById("wordcloudTooltip").setAttribute("style", "display:block;top:" + event.y + "px;left:" + event.x + "px;")
-		// console.log(event.type)
-		// console.log(item)
+		document.getElementById("wordcloudTooltip").setAttribute("style", "display:block;top:" + event.pageY + "px;left:" + event.pageX + "px;")
 	}
 }
 function createWordCloud(charID){
