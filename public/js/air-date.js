@@ -29,8 +29,31 @@ d3.csv("/Data/seriesoverview-months.csv", function(error, data) {
 		data: {
 			columns: seasons,
 			type: 'area-step'
-		},
-        groups: [season]
+    },
+    tooltip: {
+      format: {
+        value: function (value, ratio, id, index) { return value + " Episodes"; }
+      }
+    },
+    groups: [season],
+    axis: {
+      x: {
+          categories: ['JAN','FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+          label: {
+              position: 'outer-center',
+              text: 'Months',
+          } ,
+          type: 'category',
+      },
+      y: {
+        label: {
+          position: 'outer-middle',
+          text: 'Number of Episodes',
+        },
+        min: 0,
+        padding: 0,
+      },
+  }
 	});
 });
   
