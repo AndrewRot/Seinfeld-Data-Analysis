@@ -7,7 +7,6 @@ d3.csv("/Data/seriesoverview-months.csv", function(error, data) {
 	seasons = []
 	
 	data.forEach(function(row) {
-		console.log(row)
 		seasonList = ['Season ' + row.Season]
 		season.push('Season ' + row.Season)
 		seasonList.push(Number(row.January));
@@ -25,7 +24,6 @@ d3.csv("/Data/seriesoverview-months.csv", function(error, data) {
 		seasons.push(seasonList)
 
 	});
-	console.log(seasons)
 	c3.generate({
 		bindto: '#air-date-chart',
 		data: {

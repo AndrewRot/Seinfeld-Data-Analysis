@@ -10,12 +10,14 @@ var numberOfViews = ['Views'];
 d3.csv("/Data/line-episide-popularity.csv", function(error, data) {
     console.log(data);
     data.forEach(function(row) {
+      if (row["Views"] < 60) {
         numberOfLinesAll.push(Number(row["Lines"]));
         numberOfLinesElaine.push(Number(row["Elaine Lines"]));
         numberOfLinesGeorge.push(Number(row["George Lines"]));
         numberOfLinesJerry.push(Number(row["Elaine Lines"]));
         numberOfLinesKramer.push(Number(row["Elaine Lines"]));
         numberOfViews.push(Number(row["Views"]));
+      }
         
     });
 

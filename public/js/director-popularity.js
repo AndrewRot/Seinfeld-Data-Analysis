@@ -42,6 +42,9 @@ d3.csv("/Data/director_popularity.csv", function(error, data) {
         }
       },
     },
+    legend: {
+      hide: true,
+    },
     tooltip: {
       format: {
         value: function (value, ratio, id, index) { return value.toFixed(2) + " Million"; }

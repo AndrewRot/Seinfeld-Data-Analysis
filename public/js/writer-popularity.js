@@ -1,7 +1,8 @@
 popularityBrushDomainTooLarge = true
 d3.csv("/Data/writers_popularity_T.csv", function(error, data) {
   
-	
+  COLORS = ['#a6cee3', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99', '#e31a1c', '#fdbf6f'];
+
 	writers = []
 	averages = ['Average Views']
 	
@@ -14,8 +15,14 @@ d3.csv("/Data/writers_popularity_T.csv", function(error, data) {
 	  bindto: '#writerPopularityChart',
 	  data: {
 			columns: [averages],
-			type : 'bar',
-		},
+      type : 'bar',
+      color: function (color, d) {
+        return COLORS[d.x%COLORS.length];
+      },
+    },
+    legend: {
+      hide: true,
+    },
 		subchart: {
       show: true,
       onbrush: function (domain) {
