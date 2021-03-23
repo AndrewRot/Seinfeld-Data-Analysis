@@ -1,5 +1,7 @@
-Seinfeld Data Analysis
-=======
+## Seinfeld Data Analysis
+
+This project displays data visualizations in an attempt to find out what makes an episode of Seinfeld "good". It attempts to find a number of correlations including number of words spoken by each main character, the episode directors, and sentiment of the dialogue to try and understand what makes some episodes more successful than others. Utlimately, there were no strong indications that there were any correlations in the data we analyzed. If the study were to continue, it would be adventageous to look at additional data such as money spent on advertisement, episode airtimes, and number of jokes said per episode or character.
+
 
 ## Contributors
 Andrew Rottier, acrottier@wpi.edu  
